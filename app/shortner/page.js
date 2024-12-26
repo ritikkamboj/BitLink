@@ -1,13 +1,38 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Shortner() {
     const [url, setUrl] = useState();
     const [newUrl, setNewUrl] = useState();
-    const [generate, setGenerate] = useState(false);
+    const [generate, setGenerate] = useState("");
 
-    function handleChange() {
+    function generateLink() {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "url": url,
+            "shorturl": newUrl
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch("/api/shortner", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                setGenerate(`${process.env.NEXT_PUBLIC_HOST}/${newUrl}`);
+                setUrl("");
+                setNewUrl('');
+                console.log(result)
+            })
+            .catch((error) => console.error(error));
 
     }
     return (
@@ -26,8 +51,14 @@ function Shortner() {
                     placeholder="Enter your desired short text"
                     onChange={(e) => setNewUrl(e.target.value)}
                 />
-                <button className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg text-white my-3'>Generate </button>
+                <button onClick={generateLink} className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg text-white my-3'>Generate</button>
             </div>
+            {
+                generate && <code>
+                    <Link target="_blank" href={generate}>{generate}</Link>
+                </code>
+
+            }
         </div>
     );
 }
