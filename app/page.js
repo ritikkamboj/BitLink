@@ -9,14 +9,25 @@ function page() {
         <div className=" flex flex-col justify-center items-center gap-4 text-center">
           <p className="text-2xl font-bold">The Best Url Shortner </p>
           <p className="px-56">
-            The Most easiest shortner Ever Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Eos, eligendi minus unde ducimus quas
-            corporis vero possimus, ea voluptate, qui ab omnis eveniet molestias
-            inventore maxime aliquam iusto nulla. Asperiores.
+            A URL shortener application that not only shortens long URLs but
+            also allows users to create personalized, memorable aliases for
+            their links. Instead of getting a random string of characters, users
+            can choose their own custom names to make links more meaningful and
+            easier to share.(PS : Instead of using space in short name, please use underscore)
           </p>
-          <li className='flex gap-3 text-white'>
-            <Link href="/shortner"> <button className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Try Now</button></Link>
-            <Link href='/github_bitlink'> <button className=' bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Github</button></Link>
+          <li className="flex gap-3 text-white">
+            <Link href="/shortner">
+              {" "}
+              <button className="bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg">
+                Try Now
+              </button>
+            </Link>
+            <Link href="/github_bitlink">
+              {" "}
+              <button className=" bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg">
+                Github
+              </button>
+            </Link>
           </li>
         </div>
         <div className=" flex justify-start relative">
