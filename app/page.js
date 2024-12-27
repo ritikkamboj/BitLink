@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function page() {
@@ -14,8 +15,8 @@ function page() {
             inventore maxime aliquam iusto nulla. Asperiores.
           </p>
           <li className='flex gap-3 text-white'>
-            <button className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Try Now</button>
-            <button className=' bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Github</button>
+            <Link href="/shortner"> <button className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Try Now</button></Link>
+            <Link href='/github_bitlink'> <button className=' bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Github</button></Link>
           </li>
         </div>
         <div className=" flex justify-start relative">

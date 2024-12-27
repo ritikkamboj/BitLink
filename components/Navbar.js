@@ -14,7 +14,7 @@ function Navbar() {
                 <Link href="/"><li>Contact Us</li></Link>
                 <li className='flex gap-3'>
                     <Link href="/shortner"> <button className='bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Try Now</button></Link>
-                    <button className=' bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Github</button>
+                    <Link href='/github_bitlink'> <button className=' bg-purple-500 p-3 py-1 font-bold rounded-full shadow-lg'>Github</button></Link>
                 </li>
             </ul>
         </nav>
